@@ -13106,7 +13106,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">graphe_test_1</span> <span class="o">=</span> <span class="p">{</span>
@@ -13163,13 +13163,29 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Le graphe 1 se présente comme suit :</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../assets/graphe.png" ></img></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h6 id="a.-Proc&#233;dure-permettant-de-tester-si-un-arc-existe">a. Proc&#233;dure permettant de tester si un arc existe<a class="anchor-link" href="#a.-Proc&#233;dure-permettant-de-tester-si-un-arc-existe">&#182;</a></h6>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[93]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -13196,7 +13212,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[93]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -13220,7 +13236,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">valuation</span><span class="p">(</span><span class="n">graphe</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
@@ -13267,7 +13283,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">retirer</span><span class="p">(</span><span class="n">graphe</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
@@ -13277,7 +13293,7 @@ div#notebook {
             <span class="k">return</span> <span class="n">graphe</span>
     <span class="k">return</span> <span class="n">graphe</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">retirer</span><span class="p">(</span><span class="n">graphe_test</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">retirer</span><span class="p">(</span><span class="n">graphe_test_2</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13294,7 +13310,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;K&#39;: {&#39;M&#39;: 4, &#39;E&#39;: 1}, &#39;M&#39;: {&#39;H&#39;: 2}, &#39;E&#39;: {&#39;M&#39;: 1, &#39;H&#39;: 3, &#39;F&#39;: 1}, &#39;H&#39;: {&#39;F&#39;: 3}, &#39;F&#39;: {&#39;H&#39;: 1}, &#39;S&#39;: {&#39;H&#39;: 1, &#39;F&#39;: 2}}
+<pre>{&#39;A&#39;: {&#39;B&#39;: 15, &#39;C&#39;: 4}, &#39;B&#39;: {&#39;E&#39;: 5}, &#39;C&#39;: {&#39;E&#39;: 11, &#39;D&#39;: 2}, &#39;D&#39;: {&#39;E&#39;: 3}, &#39;E&#39;: {}}
 </pre>
 </div>
 </div>
@@ -13328,7 +13344,7 @@ div#notebook {
 Ainsi, nous aurons:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[187]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sommets_blancs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
@@ -13388,7 +13404,7 @@ Suppression d&#39;un sommet du set :  set()
 La clé etant le sommet en question et la valeur correspondra au plus court chemin de la source au sommet.
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[176]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plus_court_chemin</span> <span class="o">=</span> <span class="p">{</span>
@@ -13435,7 +13451,7 @@ La clé etant le sommet en question et la valeur correspondra au plus court chem
 La clé etant le sommet en question et la valeur correspondra à sont prédecesseur.
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[136]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">predecesseurs</span> <span class="o">=</span> <span class="p">{</span>
@@ -13481,7 +13497,7 @@ La clé etant le sommet en question et la valeur correspondra à sont prédecess
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[180]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_min</span><span class="p">(</span><span class="n">liste_de_gris</span><span class="p">,</span> <span class="n">distances</span><span class="p">):</span>
@@ -13537,14 +13553,14 @@ La clé etant le sommet en question et la valeur correspondra à sont prédecess
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Par exemple
-Pour la liste de sommets gris [{&#39;F&#39;, &#39;H&#39;, &#39;M&#39;}] et le dictionnaire de plus cours chemin [{&#39;M&#39;: 3, &#39;H&#39;: 2, &#39;F&#39;: 4}] 
+Pour la liste de sommets gris [{&#39;H&#39;, &#39;M&#39;, &#39;F&#39;}] et le dictionnaire de plus cours chemin [{&#39;M&#39;: 3, &#39;H&#39;: 2, &#39;F&#39;: 4}] 
 Nous avons la sortie suivant: H
 
 ---------------------
 
 Par exemple:
 Prenons le graphe :  {&#39;K&#39;: {&#39;M&#39;: 4, &#39;E&#39;: 1}, &#39;M&#39;: {&#39;E&#39;: 2, &#39;H&#39;: 2}, &#39;E&#39;: {&#39;M&#39;: 1, &#39;H&#39;: 3, &#39;F&#39;: 1}, &#39;H&#39;: {&#39;F&#39;: 3}, &#39;F&#39;: {&#39;H&#39;: 1}, &#39;S&#39;: {&#39;H&#39;: 1, &#39;F&#39;: 2}}
-Nous aurons la liste de sommets :  {&#39;H&#39;, &#39;M&#39;, &#39;K&#39;, &#39;S&#39;, &#39;F&#39;, &#39;E&#39;}
+Nous aurons la liste de sommets :  {&#39;M&#39;, &#39;F&#39;, &#39;S&#39;, &#39;E&#39;, &#39;K&#39;, &#39;H&#39;}
 </pre>
 </div>
 </div>
@@ -13555,7 +13571,7 @@ Nous aurons la liste de sommets :  {&#39;H&#39;, &#39;M&#39;, &#39;K&#39;, &#39;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[190]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">dijkstra</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
@@ -13628,7 +13644,7 @@ Nous aurons la liste de sommets :  {&#39;H&#39;, &#39;M&#39;, &#39;K&#39;, &#39;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[191]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Sortie de l&#39;algorithme</span>
@@ -13653,7 +13669,7 @@ Nous aurons la liste de sommets :  {&#39;H&#39;, &#39;M&#39;, &#39;K&#39;, &#39;
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Les sommets blancs :  {&#39;H&#39;, &#39;M&#39;, &#39;S&#39;, &#39;F&#39;, &#39;E&#39;}
+<pre>Les sommets blancs :  {&#39;M&#39;, &#39;F&#39;, &#39;S&#39;, &#39;E&#39;, &#39;H&#39;}
 Les sommets gris :  {&#39;K&#39;}
 Les sommets noirs :  set()
 Les plus courts chemins :  {&#39;K&#39;: 0}
@@ -13678,7 +13694,7 @@ La distance de  E à  H est :  4
 La distance de  E à  F est :  2
 -----------------Fin de l&#39;étape 2---------------------
 -----------------Debut de l&#39;étape 3-------------------
-Les sommets gris :  {&#39;F&#39;, &#39;H&#39;, &#39;M&#39;} distances:  {&#39;K&#39;: 0, &#39;M&#39;: 2, &#39;E&#39;: 1, &#39;H&#39;: 4, &#39;F&#39;: 2}
+Les sommets gris :  {&#39;M&#39;, &#39;F&#39;, &#39;H&#39;} distances:  {&#39;K&#39;: 0, &#39;M&#39;: 2, &#39;E&#39;: 1, &#39;H&#39;: 4, &#39;F&#39;: 2}
 On traite le sommet M
 {&#39;E&#39;: 2, &#39;H&#39;: 2} voisins de  M
 La distance de  M à  E est :  4
