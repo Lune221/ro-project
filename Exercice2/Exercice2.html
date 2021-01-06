@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>En-Tete</title>
+<title>Exercice2</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13077,7 +13077,15 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><div><img src="assets/chemin.jpg" align="center" width="400" height="500"></img></div><br></br></p>
+<center><h1>Projet de Recherches Opérationnelles</h1></center>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><b>Alioune SARR</b><br>
+<b>Papa Omar DIOP</b></p>
 
 </div>
 </div>
@@ -13085,7 +13093,227 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><hr><center><h1>Projet de Recherches Opérationnelles</h1></center><hr></p>
+<h2 id="Exercice-2:-Plus-court-chemin">Exercice 2: Plus court chemin<a class="anchor-link" href="#Exercice-2:-Plus-court-chemin">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.-&#201;crire-des-proc&#233;dures-permettant-de-manipuler-le-graphe-(tester-si-un-arc-existe,-obtenir-la-valuation-d'un-arc,-retirer-un-arc-du-graphe,-imprimer-la-matrice-des-valuations)">1. &#201;crire des proc&#233;dures permettant de manipuler le graphe (tester si un arc existe, obtenir la valuation d'un arc, retirer un arc du graphe, imprimer la matrice des valuations)<a class="anchor-link" href="#1.-&#201;crire-des-proc&#233;dures-permettant-de-manipuler-le-graphe-(tester-si-un-arc-existe,-obtenir-la-valuation-d'un-arc,-retirer-un-arc-du-graphe,-imprimer-la-matrice-des-valuations)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">graphe_test_1</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;K&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;S&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">graphe_test_2</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;A&#39;</span><span class="p">:{</span>
+        <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span>
+        <span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="mi">4</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;B&#39;</span><span class="p">:{</span>
+        <span class="s1">&#39;E&#39;</span><span class="p">:</span><span class="mi">5</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;C&#39;</span><span class="p">:{</span>
+        <span class="s1">&#39;E&#39;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span>
+        <span class="s1">&#39;D&#39;</span><span class="p">:</span><span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;D&#39;</span><span class="p">:{</span>
+        <span class="s1">&#39;E&#39;</span><span class="p">:</span><span class="mi">3</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;E&#39;</span><span class="p">:{</span>
+        
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h6 id="a.-Proc&#233;dure-permettant-de-tester-si-un-arc-existe">a. Proc&#233;dure permettant de tester si un arc existe<a class="anchor-link" href="#a.-Proc&#233;dure-permettant-de-tester-si-un-arc-existe">&#182;</a></h6>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[93]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Entrées de la fonction: graphe, s1, s2</span>
+<span class="sd">Sortie : boolean =&gt; True : l&#39;arc existe, False: l&#39;arc n&#39;existe pas</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">arc_existe</span><span class="p">(</span><span class="n">graphe</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">sommet</span><span class="p">,</span> <span class="n">arcs</span> <span class="ow">in</span> <span class="n">graphe</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sommet</span> <span class="o">==</span> <span class="n">s1</span> <span class="ow">or</span> <span class="n">sommet</span> <span class="o">==</span> <span class="n">s2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">s1</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">arcs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="ow">or</span> <span class="n">s2</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">arcs</span><span class="o">.</span><span class="n">keys</span><span class="p">())):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+<span class="n">arc_existe</span><span class="p">(</span><span class="n">graphe_test_1</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[93]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h6 id="b.-Obtenir-la-valuation-d'un-arc">b. Obtenir la valuation d'un arc<a class="anchor-link" href="#b.-Obtenir-la-valuation-d'un-arc">&#182;</a></h6>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">valuation</span><span class="p">(</span><span class="n">graphe</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">sommet</span><span class="p">,</span> <span class="n">arcs</span> <span class="ow">in</span> <span class="n">graphe</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sommet</span> <span class="o">==</span> <span class="n">s1</span> <span class="ow">or</span> <span class="n">sommet</span> <span class="o">==</span> <span class="n">s2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">s1</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">arcs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="ow">or</span> <span class="n">s2</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">arcs</span><span class="o">.</span><span class="n">keys</span><span class="p">())):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">arcs</span><span class="p">[</span><span class="n">s1</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">arcs</span><span class="p">[</span><span class="n">s2</span><span class="p">]</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">valuation</span><span class="p">(</span><span class="n">graphe_test_2</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="c.-Retirer-un-arc-du-graphe">c. Retirer un arc du graphe<a class="anchor-link" href="#c.-Retirer-un-arc-du-graphe">&#182;</a></h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">retirer</span><span class="p">(</span><span class="n">graphe</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">sommet</span><span class="p">,</span> <span class="n">arcs</span> <span class="ow">in</span> <span class="n">graphe</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">sommet</span> <span class="o">==</span> <span class="n">s1</span> <span class="ow">and</span> <span class="n">s2</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">arcs</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+            <span class="k">del</span> <span class="n">arcs</span><span class="p">[</span><span class="n">s2</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">graphe</span>
+    <span class="k">return</span> <span class="n">graphe</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">retirer</span><span class="p">(</span><span class="n">graphe_test</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;K&#39;: {&#39;M&#39;: 4, &#39;E&#39;: 1}, &#39;M&#39;: {&#39;H&#39;: 2}, &#39;E&#39;: {&#39;M&#39;: 1, &#39;H&#39;: 3, &#39;F&#39;: 1}, &#39;H&#39;: {&#39;F&#39;: 3}, &#39;F&#39;: {&#39;H&#39;: 1}, &#39;S&#39;: {&#39;H&#39;: 1, &#39;F&#39;: 2}}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="d.-Imprimer-matrice-de-valuation">d. Imprimer matrice de valuation<a class="anchor-link" href="#d.-Imprimer-matrice-de-valuation">&#182;</a></h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Question incomprie.</p>
 
 </div>
 </div>
@@ -13093,15 +13321,395 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div  class="alert alert-info" style="margin-top: 20px">
-    <center><h2><u> Membres du groupe </u></h2></center><br>
-    <ol>
-        <li> ALIOUNE SARR </li>
-        <li> PAPA OMAR DIOP </li>
-    </ol>
+<h3 id="2.-Initialiser-trois-structures-de-donn&#233;es-permettant-de-stocker-les-sommets-noirs-(initialement,-aucun),-les-sommets-gris-(initialement,-aucun),-les-autres-blancs-(initialement,-tous).">2. Initialiser trois structures de donn&#233;es permettant de stocker les sommets noirs (initialement, aucun), les sommets gris (initialement, aucun), les autres blancs (initialement, tous).<a class="anchor-link" href="#2.-Initialiser-trois-structures-de-donn&#233;es-permettant-de-stocker-les-sommets-noirs-(initialement,-aucun),-les-sommets-gris-(initialement,-aucun),-les-autres-blancs-(initialement,-tous).">&#182;</a></h3>
+</div>
+</div>
+</div>Pour se faire, nous allons utiliser des 'sets' qui sont enfait des listes qui ne permettent pas la duplications des éléments.
+Ainsi, nous aurons:
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[187]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sommets_blancs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">sommets_gris</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">sommets_noirs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+<span class="c1"># Pour ajouter un sommet au set de sommets gris, il suffit de faire</span>
+<span class="n">sommets_gris</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">)</span>
+<span class="c1"># Ajoutons encore le même sommet:</span>
+<span class="n">sommets_gris</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">)</span>
+<span class="c1"># Affichons le résultat</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Deux ajouts de sommets gris S : &quot;</span><span class="p">,</span> <span class="n">sommets_gris</span><span class="p">)</span>
+
+<span class="c1"># Pour enlever un sommet du set, il faut faire:</span>
+<span class="n">sommets_gris</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Suppression d&#39;un sommet du set : &quot;</span><span class="p">,</span> <span class="n">sommets_gris</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Deux ajouts de sommets gris S :  {&#39;S&#39;}
+Suppression d&#39;un sommet du set :  set()
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.-Initialiser-deux-structures-de-donn&#233;es-permettant,-pour-chaque-sommet-S,-de-stocker-la-longueur-du-plus-court-chemin-connu-de-X-&#224;-S,-ainsi-que-le-pr&#233;d&#233;cesseur-de-S-dans-le-plus-court-chemin-de-X-&#224;-S">3. Initialiser deux structures de donn&#233;es permettant, pour chaque sommet S, de stocker la longueur du plus court chemin connu de X &#224; S, ainsi que le pr&#233;d&#233;cesseur de S dans le plus court chemin de X &#224; S<a class="anchor-link" href="#3.-Initialiser-deux-structures-de-donn&#233;es-permettant,-pour-chaque-sommet-S,-de-stocker-la-longueur-du-plus-court-chemin-connu-de-X-&#224;-S,-ainsi-que-le-pr&#233;d&#233;cesseur-de-S-dans-le-plus-court-chemin-de-X-&#224;-S">&#182;</a></h3>
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h6 id="ii.-Structure-de-donn&#233;es-pour-stocker-la-longueur-du-plus-cours-chemin-de-X-&#224;-S:">ii. Structure de donn&#233;es pour stocker la longueur du plus cours chemin de X &#224; S:<a class="anchor-link" href="#ii.-Structure-de-donn&#233;es-pour-stocker-la-longueur-du-plus-cours-chemin-de-X-&#224;-S:">&#182;</a></h6>
+</div>
+</div>
+</div>Pour se faire, nous utiliserons un dictionnaire clé/valeur.
+La clé etant le sommet en question et la valeur correspondra au plus court chemin de la source au sommet.
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[176]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plus_court_chemin</span> <span class="o">=</span> <span class="p">{</span>
+    
+<span class="p">}</span>
+<span class="c1"># Pour ajouter un sommet s et une distance d, nous faisons de la manière suivante</span>
+<span class="c1"># Exemple</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;S&quot;</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">plus_court_chemin</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plus_court_chemin</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;S&#39;: 10}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h6 id="i.-Structure-de-donn&#233;es-pour-stocker-le-pr&#233;decesseur-de-S:">i. Structure de donn&#233;es pour stocker le pr&#233;decesseur de S:<a class="anchor-link" href="#i.-Structure-de-donn&#233;es-pour-stocker-le-pr&#233;decesseur-de-S:">&#182;</a></h6>
+</div>
+</div>
+</div>Pour se faire, nous utiliserons un dictionnaire clé/valeur.
+La clé etant le sommet en question et la valeur correspondra à sont prédecesseur.
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[136]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">predecesseurs</span> <span class="o">=</span> <span class="p">{</span>
+    
+<span class="p">}</span>
+<span class="c1"># Pour ajouter un prédecesseur &quot;P&quot; d&#39;un sommet donné &quot;S&quot;, nous faisons de la manière suivante:</span>
+<span class="c1"># Exemple</span>
+<span class="n">sommet</span> <span class="o">=</span> <span class="s2">&quot;S&quot;</span>
+<span class="n">predecesseur</span> <span class="o">=</span> <span class="s2">&quot;P&quot;</span>
+<span class="n">predecesseurs</span><span class="p">[</span><span class="n">sommet</span><span class="p">]</span> <span class="o">=</span> <span class="n">predecesseur</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">predecesseurs</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;S&#39;: &#39;P&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="4.-Donner-l'arbre-des-plus-courts-chemin-d'un-graphe-de-votre-choix-&#224;-partir-d'un-sommet-source.">4. Donner l'arbre des plus courts chemin d'un graphe de votre choix &#224; partir d'un sommet source.<a class="anchor-link" href="#4.-Donner-l'arbre-des-plus-courts-chemin-d'un-graphe-de-votre-choix-&#224;-partir-d'un-sommet-source.">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[180]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_min</span><span class="p">(</span><span class="n">liste_de_gris</span><span class="p">,</span> <span class="n">distances</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cette fonction nous permet de sélectionner la sommet avec la distance minimale dans la liste de sommets découverts</span>
+<span class="sd">    à chaque étape de l&#39;algorithme</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dist_min</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">distances</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">sommet_min</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    
+    <span class="k">for</span> <span class="n">sommet</span><span class="p">,</span> <span class="n">distance</span> <span class="ow">in</span> <span class="n">distances</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">sommet</span> <span class="ow">in</span> <span class="n">liste_de_gris</span> <span class="ow">and</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="n">dist_min</span><span class="p">:</span>
+            <span class="n">dist_min</span> <span class="o">=</span> <span class="n">distance</span>
+            <span class="n">sommet_min</span> <span class="o">=</span> <span class="n">sommet</span>
+    
+    <span class="k">return</span> <span class="n">sommet_min</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Par exemple&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pour la liste de sommets gris [</span><span class="si">{0}</span><span class="s2">] et le dictionnaire de plus cours chemin [</span><span class="si">{1}</span><span class="s2">] &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;H&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">]),</span> <span class="p">{</span><span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nous avons la sortie suivant:&quot;</span><span class="p">,</span> <span class="n">get_min</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;H&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">])</span> <span class="p">,</span> <span class="p">{</span><span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}))</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">---------------------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_sommets_blancs</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cette fonction renvoie, étant donné un graphe, un set de tous les sommets.</span>
+<span class="sd">    Cet set sera utilisé pour initialiser les sommets blancs.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sommets_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">sommet</span><span class="p">,</span> <span class="n">arcs</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">sommets_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sommet</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">subsommet</span><span class="p">,</span> <span class="n">subarc</span> <span class="ow">in</span> <span class="n">arcs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">sommets_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">subsommet</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sommets_set</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Par exemple:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prenons le graphe : &quot;</span><span class="p">,</span> <span class="n">graphe_test_1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nous aurons la liste de sommets : &quot;</span><span class="p">,</span> <span class="n">get_sommets_blancs</span><span class="p">(</span><span class="n">graphe_test_1</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Par exemple
+Pour la liste de sommets gris [{&#39;F&#39;, &#39;H&#39;, &#39;M&#39;}] et le dictionnaire de plus cours chemin [{&#39;M&#39;: 3, &#39;H&#39;: 2, &#39;F&#39;: 4}] 
+Nous avons la sortie suivant: H
+
+---------------------
+
+Par exemple:
+Prenons le graphe :  {&#39;K&#39;: {&#39;M&#39;: 4, &#39;E&#39;: 1}, &#39;M&#39;: {&#39;E&#39;: 2, &#39;H&#39;: 2}, &#39;E&#39;: {&#39;M&#39;: 1, &#39;H&#39;: 3, &#39;F&#39;: 1}, &#39;H&#39;: {&#39;F&#39;: 3}, &#39;F&#39;: {&#39;H&#39;: 1}, &#39;S&#39;: {&#39;H&#39;: 1, &#39;F&#39;: 2}}
+Nous aurons la liste de sommets :  {&#39;H&#39;, &#39;M&#39;, &#39;K&#39;, &#39;S&#39;, &#39;F&#39;, &#39;E&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[190]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">dijkstra</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Algorithme de Dijkstra pour la recherche du plus court chemin.</span>
+<span class="sd">    Entrées : graph, source</span>
+<span class="sd">    Sortie : [plus_courts_chemins, predecesseurs]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Initialisation de l&#39;algorithme</span>
+
+    <span class="c1"># Structure de données pour stocker le prédecesseur de S:</span>
+    <span class="n">predecesseurs</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="c1"># Structure de données pour stocker la longueur du plus cours chemin de X à S:</span>
+    <span class="n">plus_court_chemin</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">sommets_blancs</span> <span class="o">=</span> <span class="n">get_sommets_blancs</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span> <span class="c1"># On met tous les sommets du graphe dans la liste de sommets blanc</span>
+    <span class="n">sommets_gris</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">sommets_noirs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    
+    <span class="c1"># On commence d&#39;emblée par notre sommet de départ</span>
+    <span class="n">plus_court_chemin</span><span class="p">[</span><span class="n">source</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># La distance par rapport à la source est 0</span>
+    <span class="n">sommets_blancs</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>  <span class="c1"># On enléve la source dans la liste de sommets non découverts</span>
+    <span class="n">sommets_gris</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>  <span class="c1"># On ajoute la source dans la liste de sommets découverts</span>
+
+    <span class="c1"># Fin de l&#39;étape d&#39;initialisation</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Les sommets blancs : &quot;</span><span class="p">,</span> <span class="n">sommets_blancs</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Les sommets gris : &quot;</span><span class="p">,</span> <span class="n">sommets_gris</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Les sommets noirs : &quot;</span><span class="p">,</span> <span class="n">sommets_noirs</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Les plus courts chemins : &quot;</span><span class="p">,</span> <span class="n">plus_court_chemin</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------Debut de la recherhce------------------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="n">etape</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">sommets_gris</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------Debut de l&#39;étape </span><span class="si">{}</span><span class="s2">-------------------&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">etape</span><span class="p">))</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Les sommets gris : &quot;</span><span class="p">,</span> <span class="n">sommets_gris</span><span class="p">,</span> <span class="s2">&quot;distances: &quot;</span><span class="p">,</span> <span class="n">plus_court_chemin</span><span class="p">)</span>
+        
+        <span class="n">t</span> <span class="o">=</span> <span class="n">get_min</span><span class="p">(</span><span class="n">sommets_gris</span><span class="p">,</span> <span class="n">plus_court_chemin</span><span class="p">)</span> <span class="c1"># On prend le sommet gris avec la distance minimale</span>
+        <span class="n">sommets_noirs</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">sommets_gris</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;On traite le sommet &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">voisin</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">t</span><span class="p">]:</span> <span class="c1"># Pour chaque voisin de ce sommet, voisin étant lui même un sommet</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="s2">&quot;voisins de &quot;</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+                        
+            <span class="c1"># Si le voisin n&#39;est pas dans la liste de distances calculées, on l&#39;ajoute dedans</span>
+            <span class="c1"># Aussi si la distance nouvellement caculé est inférieur à celle déjà calculée, on met à jour cette distance</span>
+            <span class="n">nouvelle_distance</span> <span class="o">=</span> <span class="n">plus_court_chemin</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">+</span> <span class="n">graph</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="n">voisin</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La distance de &quot;</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="s2">&quot;à &quot;</span><span class="p">,</span> <span class="n">voisin</span><span class="p">,</span> <span class="s2">&quot;est : &quot;</span><span class="p">,</span> <span class="n">nouvelle_distance</span><span class="p">)</span>
+            
+            <span class="k">if</span><span class="p">(</span><span class="n">voisin</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plus_court_chemin</span> <span class="ow">or</span> <span class="n">nouvelle_distance</span> <span class="o">&lt;</span> <span class="n">plus_court_chemin</span><span class="p">[</span><span class="n">voisin</span><span class="p">]):</span>
+                <span class="n">sommets_gris</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">voisin</span><span class="p">)</span>  <span class="c1"># On ajoute ce voisin dans la liste des sommets découverts</span>
+                <span class="k">if</span> <span class="n">voisin</span> <span class="ow">in</span> <span class="n">sommets_blancs</span><span class="p">:</span>
+                    <span class="n">sommets_blancs</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">voisin</span><span class="p">)</span>  <span class="c1"># On enlève ce voisin dans la liste des sommets non découverts</span>
+                <span class="n">plus_court_chemin</span><span class="p">[</span><span class="n">voisin</span><span class="p">]</span> <span class="o">=</span> <span class="n">nouvelle_distance</span>
+                <span class="n">predecesseurs</span><span class="p">[</span><span class="n">voisin</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span>
+                <span class="c1"># On découvre les voisins de ce sommet à on l&#39;ajoute à la liste de sommets gris</span>
+                <span class="c1"># print(&quot;Met à jour le sommet &quot; + str(voisin) + &quot; avec la distance : &quot; + str(nouvelle_distance))</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------Fin de l&#39;étape </span><span class="si">{}</span><span class="s2">---------------------&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">etape</span><span class="p">))</span>
+        <span class="n">etape</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">-----------------Fin de l&#39;Algorithme de Dijkstra-----------------&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">plus_court_chemin</span><span class="p">,</span> <span class="n">predecesseurs</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[191]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Sortie de l&#39;algorithme</span>
+
+<span class="n">sorties</span> <span class="o">=</span> <span class="n">dijkstra</span><span class="p">(</span><span class="n">graphe_test_1</span><span class="p">,</span><span class="s1">&#39;K&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Les plus courts chemins :&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sorties</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Les predecesseurs: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sorties</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Les sommets blancs :  {&#39;H&#39;, &#39;M&#39;, &#39;S&#39;, &#39;F&#39;, &#39;E&#39;}
+Les sommets gris :  {&#39;K&#39;}
+Les sommets noirs :  set()
+Les plus courts chemins :  {&#39;K&#39;: 0}
+-----------------Debut de la recherhce------------------
+
+-----------------Debut de l&#39;étape 1-------------------
+Les sommets gris :  {&#39;K&#39;} distances:  {&#39;K&#39;: 0}
+On traite le sommet K
+{&#39;M&#39;: 4, &#39;E&#39;: 1} voisins de  K
+La distance de  K à  M est :  4
+{&#39;M&#39;: 4, &#39;E&#39;: 1} voisins de  K
+La distance de  K à  E est :  1
+-----------------Fin de l&#39;étape 1---------------------
+-----------------Debut de l&#39;étape 2-------------------
+Les sommets gris :  {&#39;E&#39;, &#39;M&#39;} distances:  {&#39;K&#39;: 0, &#39;M&#39;: 4, &#39;E&#39;: 1}
+On traite le sommet E
+{&#39;M&#39;: 1, &#39;H&#39;: 3, &#39;F&#39;: 1} voisins de  E
+La distance de  E à  M est :  2
+{&#39;M&#39;: 1, &#39;H&#39;: 3, &#39;F&#39;: 1} voisins de  E
+La distance de  E à  H est :  4
+{&#39;M&#39;: 1, &#39;H&#39;: 3, &#39;F&#39;: 1} voisins de  E
+La distance de  E à  F est :  2
+-----------------Fin de l&#39;étape 2---------------------
+-----------------Debut de l&#39;étape 3-------------------
+Les sommets gris :  {&#39;F&#39;, &#39;H&#39;, &#39;M&#39;} distances:  {&#39;K&#39;: 0, &#39;M&#39;: 2, &#39;E&#39;: 1, &#39;H&#39;: 4, &#39;F&#39;: 2}
+On traite le sommet M
+{&#39;E&#39;: 2, &#39;H&#39;: 2} voisins de  M
+La distance de  M à  E est :  4
+{&#39;E&#39;: 2, &#39;H&#39;: 2} voisins de  M
+La distance de  M à  H est :  4
+-----------------Fin de l&#39;étape 3---------------------
+-----------------Debut de l&#39;étape 4-------------------
+Les sommets gris :  {&#39;F&#39;, &#39;H&#39;} distances:  {&#39;K&#39;: 0, &#39;M&#39;: 2, &#39;E&#39;: 1, &#39;H&#39;: 4, &#39;F&#39;: 2}
+On traite le sommet F
+{&#39;H&#39;: 1} voisins de  F
+La distance de  F à  H est :  3
+-----------------Fin de l&#39;étape 4---------------------
+-----------------Debut de l&#39;étape 5-------------------
+Les sommets gris :  {&#39;H&#39;} distances:  {&#39;K&#39;: 0, &#39;M&#39;: 2, &#39;E&#39;: 1, &#39;H&#39;: 3, &#39;F&#39;: 2}
+On traite le sommet H
+{&#39;F&#39;: 3} voisins de  H
+La distance de  H à  F est :  6
+-----------------Fin de l&#39;étape 5---------------------
+
+-----------------Fin de l&#39;Algorithme de Dijkstra-----------------
+
+Les plus courts chemins :{&#39;K&#39;: 0, &#39;M&#39;: 2, &#39;E&#39;: 1, &#39;H&#39;: 3, &#39;F&#39;: 2}
+
+Les predecesseurs: {&#39;M&#39;: &#39;E&#39;, &#39;E&#39;: &#39;K&#39;, &#39;H&#39;: &#39;F&#39;, &#39;F&#39;: &#39;E&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>
